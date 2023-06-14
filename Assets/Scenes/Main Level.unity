@@ -479,7 +479,11 @@ PrefabInstance:
     - target: {fileID: 639792562578276093, guid: 63f5e4c984aa2bd4a9ec84e72ca976a7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 19ea75e5689a5cf488aa6fbca77ef96e, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 639792562578276093, guid: 63f5e4c984aa2bd4a9ec84e72ca976a7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 639792562889159874, guid: 63f5e4c984aa2bd4a9ec84e72ca976a7, type: 3}
       propertyPath: m_Name
       value: Basic Enemy
