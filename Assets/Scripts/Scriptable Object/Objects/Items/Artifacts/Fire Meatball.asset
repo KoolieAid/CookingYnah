@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58b3cd6101aa2a4585cf915d339ae28, type: 3}
+  m_Name: Fire Meatball
+  m_EditorClassIdentifier: 
+  artifactName: Fire Meatball
+  artifactDescription: Spawns 2 Burning Meatballs that orbit the player dealing damage
+    to monsters hit
+  abilityPrefab: {fileID: 504390270968948442, guid: 3a92f30a24af2f846b5c86434c54845f, type: 3}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] private OmniAttack attack;
     [SerializeField] private SphereCollider attackCollider;
     private bool canAttack = true;
+
+    [SerializeField] private Jab jab;
 
     [Header("Inventory")]
     [SerializeField] private PlayerInventory inventory;
@@ -69,7 +72,8 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && canAttack)
+        // TODO: Synchronize animations, since canAttack got replaced
+        if (Input.GetButtonDown("Fire1")) // I removed canAttack for Omni since it got replaced by jab
         {
             //attackCollider.enabled = true;
             Attack();
@@ -125,24 +129,35 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, rb.velocity.x > 0 ? 180f : 0f, 0));
     }
 
-    private async void Attack()
+    private void Attack()
     {
-        attackParticle.Play();
         canAttack = false;
 
         attackCollider.radius = playerDataInstance.AttackRange;
-        attack.DealDamage((int)playerDataInstance.RawDamage);
+        // attack.DealDamage((int)playerDataInstance.RawDamage);
 
-        animator.ResetTrigger("Attack Finish");
-        animator.SetTrigger("Attack Start");
+        var (attacked, isSlow) = jab.Attack();
+        
+        if (!attacked) return;
+
+        if (!isSlow)
+        {
+            attackParticle.Play();
+            animator.ResetTrigger("Attack Finish");
+            animator.SetTrigger("Attack Start");
+        }
+        else
+        {
+            throw new NotImplementedException("No slow attack animation yet");
+        }
 
         // Debug.Log($"{playerUnitData.AttackInterval}");
-        await new WaitForSeconds(playerUnitData.AttackInterval);
+        // await new WaitForSeconds(playerUnitData.AttackInterval);
 
         // Debug.Log("done attacking");
         
 
-        canAttack = true;
+        // canAttack = true;
     }
 
 

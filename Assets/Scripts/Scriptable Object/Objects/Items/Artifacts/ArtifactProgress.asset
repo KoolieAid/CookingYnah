@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352a69a15270c994f95cd2e2d8da70a1, type: 3}
+  m_Name: ArtifactProgress
+  m_EditorClassIdentifier: 
+  isArtifactUnlocked:
+    _serializedList:
+    - Key: 1
+      Value: 1
+    - Key: 2
+      Value: 1
+    - Key: 3
+      Value: 0
+  artifactDescriptionDictionary:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 11400000, guid: 87ce23ccf712cc44d9a46e3d67db666d, type: 2}
+    - Key: 2
+      Value: {fileID: 11400000, guid: ebe7e82927ad4b647a6714d43e8d801a, type: 2}
+    - Key: 3
+      Value: {fileID: 11400000, guid: 3b787d2286bca3d4199814a1bf51b8a8, type: 2}
