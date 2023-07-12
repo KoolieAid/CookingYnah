@@ -38,21 +38,39 @@ namespace Crafting
         private Image wrongCraftSprite;
 
         [SerializeField] private Sprite wrongSprite;
+
+        [Header("Logbook")]
+        [SerializeField] private Transform logbookParent;
+
+        [SerializeField] private GameObject logEntryPrefab;
+
+        private readonly List<string> unlockedRecipes = new();
+
+        private void PutToLogs(Recipe rec)
+        {
+            if (unlockedRecipes.Contains(rec.output.Name)) return;
+            
+            unlockedRecipes.Add(rec.output.Name);
+            
+            Instantiate(logEntryPrefab, logbookParent).GetComponent<LogEntry>().Initialize(rec);
+        }
         
         public void Listen()
         {
-            Debug.Log(GetOutput().itemName != "None");
+            Debug.Log(GetOutput().Item1.itemName != "None");
         }
 
         public void CraftToOutput()
         {
-            var ing = GetOutput();
+            var (ing, rec) = GetOutput();
 
             if (ing.itemName == InventorySlot.Empty.itemName)
             {
                 ChangeOutput();
                 return;
             }
+            
+            PutToLogs(rec);
 
             ChangeOutput(ing);
 
@@ -64,7 +82,7 @@ namespace Crafting
             UIManager.instance.UpdateCraftingInventoryUI();
         }
 
-        public InventorySlot GetOutput()
+        public (InventorySlot, Recipe) GetOutput()
         {
             var inSlots = new List<string>(slots.Length);
 
@@ -83,11 +101,11 @@ namespace Crafting
                         return data.Name;
                     }).ToArray(), inSlots.ToArray()))
                 {
-                    return new InventorySlot(recipe.output);
+                    return (new InventorySlot(recipe.output), recipe);
                 }
             }
             
-            return InventorySlot.Empty;
+            return (InventorySlot.Empty, null);
         }
 
         private static bool CompareSlots(string[] a, string[] b)
