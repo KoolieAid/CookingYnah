@@ -75,3 +75,6 @@ crashlytics-build.properties
 /.vs/
 *.vsconfig
 .vscode/
+
+target/
+target.meta
