@@ -19,6 +19,12 @@ public class CombatState : MonsterState
             return;
         }
 
+        if (enemy.GetTargetUnit() == null)
+        {
+            statManager.ChangeState(enemy, new ChaseState(statManager, enemy));
+            return;
+        }
+
         float distanceToTarget = Vector3.Distance(enemy.transform.position, enemy.GetTargetUnit().transform.position);
 
         if (distanceToTarget > enemy.GetEnemyUnitData().AttackRange)
@@ -31,7 +37,6 @@ public class CombatState : MonsterState
             statManager.ChangeState(enemy, new AttackState(statManager, enemy));
             return;
         }
-
     }
     public override void Exit()
     {

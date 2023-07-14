@@ -31,6 +31,8 @@ public class ChickenEnemy : Enemy
 
     public void EnableEggnade()
     {
+        spawnedEgg.GetComponent<ArcGrenade>().InitializeGrenade(targetUnit.transform.position);
+        spawnedEgg.transform.position = eggSpawnPoint.position;
         spawnedEgg.SetActive(true);
     }
 
@@ -42,7 +44,6 @@ public class ChickenEnemy : Enemy
 
             GameObject clone = Instantiate(eggPrefab, eggSpawnPoint.position, Quaternion.identity);
             clone.SetActive(false);
-            clone.GetComponent<ArcGrenade>().InitializeGrenade(targetUnit.transform.position);
             clone.GetComponent<EggGrenade>().SetExplosionData(enemyDataInstance.BasicAttackDamage, enemyDataInstance.UnitID);
             spawnedEgg = clone;
         }

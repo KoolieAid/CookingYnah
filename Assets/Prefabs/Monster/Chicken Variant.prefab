@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783b4d28dd86b9546a4b642daf14b7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chickenEnemy: {fileID: 6580626637855203290}
+  enemy: {fileID: 6580626637855203290}
 --- !u!135 &657449444433750738 stripped
 SphereCollider:
   m_CorrespondingSourceObject: {fileID: 639792562889159886, guid: 63f5e4c984aa2bd4a9ec84e72ca976a7, type: 3}
@@ -588,8 +588,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggroTrigger: {fileID: 657449444433750738}
   targetUnit: {fileID: 0}
-  redMaterial: {fileID: 2100000, guid: 369077c2621799f469c0e1af06a20ac5, type: 2}
-  greenMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   hpBarGameObject: {fileID: 657449443426379170}
   hpBar: {fileID: 657449444148922464}
   animator: {fileID: 6199643573244997393}

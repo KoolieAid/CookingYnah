@@ -1194,9 +1194,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 919298741, guid: 0e2eab991fcb45b468332a9ebb90d929, type: 3}
+      value: {fileID: -86322048, guid: 0af8211c61eeb9443be41c65df314bbc, type: 3}
     - time: 0.33333334
-      value: {fileID: 919298741, guid: 0e2eab991fcb45b468332a9ebb90d929, type: 3}
+      value: {fileID: -86322048, guid: 0af8211c61eeb9443be41c65df314bbc, type: 3}
     attribute: m_Sprite
     path: Upper Body/Head
     classID: 212
@@ -1423,8 +1423,8 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 919298741, guid: 0e2eab991fcb45b468332a9ebb90d929, type: 3}
-    - {fileID: 919298741, guid: 0e2eab991fcb45b468332a9ebb90d929, type: 3}
+    - {fileID: -86322048, guid: 0af8211c61eeb9443be41c65df314bbc, type: 3}
+    - {fileID: -86322048, guid: 0af8211c61eeb9443be41c65df314bbc, type: 3}
     - {fileID: -424773962, guid: 0e2eab991fcb45b468332a9ebb90d929, type: 3}
     - {fileID: -424773962, guid: 0e2eab991fcb45b468332a9ebb90d929, type: 3}
     - {fileID: 609549289, guid: 0e2eab991fcb45b468332a9ebb90d929, type: 3}
